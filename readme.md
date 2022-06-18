@@ -26,11 +26,13 @@ The main purpose of this project is to create a webpage to a cliente about her a
 
 <hr>
 
-
 ## Running the application
 
-- Run: `npm install`;
-- Run: `npm start`;
+- Run: `docker-compose build`;
+- Run: `docker-compose up`;
+
+- Link: You can access the web page on `http://localhost:3000/`
+
 <hr>
 
 
