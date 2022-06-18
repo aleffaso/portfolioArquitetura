@@ -12,6 +12,15 @@ services:
       - "3000:3000"
     env_file:
       - .env
+    environment:
+      - DATABASE_USER=root
+      - DATABASE_PASSWORD=root
+      - DATABASE_TABLE=portfolio
+      - DATABASE_HOST=db
+      - DATABASE_DIALECT=postgres
+      - SESSION_SECRET=passwordSecret
+      - DATABASE_TIMEZONE = -03:00
+      - JWT_TOKEN = abracadabra
     depends_on:
       - db
 
@@ -22,3 +31,9 @@ services:
       - ./.ignore/postgres/postgres:/var/lib/postgresql/data
     env_file:
       - .env
+    environment:
+      - POSTGRES_NAME=portfolio
+      - NEW_POSTGRES_NAME=portfolio
+      - POSTGRES_PASSWORD=root
+      - POSTGRES_USER=root
+      - POSTGRES_DB=portfolio
