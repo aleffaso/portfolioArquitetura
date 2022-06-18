@@ -4,7 +4,6 @@ const dotenv = require('dotenv');
 const bodyParser = require('body-parser');
 const session = require('express-session');
 
-
 const routes = require('./config/routes');
 
 //Set envkeys
