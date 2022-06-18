@@ -614,7 +614,12 @@ progress {
   max-width: 100%;
   height: auto;
   border-radius: 200px;
+}
 
+.img-fluid-project {
+  max-width: 100%;
+  height: auto;
+  border-radius: 80% 20% 40% / 60% 20% 40%;
 }
 .img-thumbnail {
   padding: 0.25rem;
@@ -11505,8 +11510,8 @@ body {
 #mainNav .navbar-toggler {
   font-size: 80%;
   padding: 0.75rem;
-  color: #64a19d;
-  border: 1px solid #64a19d;
+  color: #000;
+  border: 1px solid #000;
 }
 #mainNav .navbar-toggler:focus {
   outline: none;
@@ -11660,10 +11665,16 @@ body {
 .projects-section .featured-text {
   padding: 2rem;
 }
+
 @media (min-width: 992px) {
   .projects-section .featured-text {
-    padding: 0 0 0 2rem;
-    border-left: 0.5rem solid #64a19d;
+    padding: 0 0 0 5rem;
+    border-left: 0.5rem solid #000;
+  }
+
+  .projects-section .vertical-bar{
+    padding: 0 0 0 5rem;
+    border-right: 0.1rem solid #000;
   }
 }
 .projects-section .project-text {
@@ -11723,15 +11734,16 @@ body {
 }
 .contact-section .social a {
   text-align: center;
-  height: 3rem;
-  width: 3rem;
+  height: 4rem;
+  width: 4rem;
   background: rgba(255, 255, 255, 0.1);
   border-radius: 100%;
-  line-height: 3rem;
-  color: rgba(255, 255, 255, 0.3);
+  line-height: 4rem;
+  color: rgba(255, 255, 255, 1);
 }
 .contact-section .social a:hover {
-  color: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 1);
+  color: rgba(0, 0, 0, 1);
 }
 .contact-section .social a:active {
   color: #fff;
