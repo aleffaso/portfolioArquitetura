@@ -1,8 +1,8 @@
-# Portfolio - Arquitetura
+# Portfolio - Architecture Projects
 
-<!-- <p>
+<p>
     <img src="public/assets/img/wallpaper.png">
-</p> -->
+</p>
 
 ## Overview
 The main purpose of this project is to create a webpage to a cliente about her architecture projects.
@@ -36,6 +36,8 @@ To run the app you'll need [Docker](https://www.docker.com/products/docker-deskt
 - Run: `docker-compose up`;
 
 - Link: You can access the web page on `http://localhost:3000/`
+
+- The application is also running at this [link](https://thaynasantos.herokuapp.com/) on Heroku
 
 <hr>
 
