@@ -28,6 +28,10 @@ The main purpose of this project is to create a webpage to a cliente about her a
 
 ## Running the application
 
+To run the app you'll need [Docker](https://www.docker.com/products/docker-desktop/). After that, follow the steps below in your `terminal`:
+
+- Run: `git clone https://github.com/aleffaso/portfolioArquitetura.git`
+
 - Run: `docker-compose build`;
 - Run: `docker-compose up`;
 
