@@ -619,7 +619,7 @@ progress {
 .img-fluid-project {
   max-width: 100%;
   height: auto;
-  border-radius: 80% 20% 40% / 60% 20% 40%;
+  border-radius: 50px
 }
 .img-thumbnail {
   padding: 0.25rem;
