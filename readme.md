@@ -26,6 +26,13 @@ The main purpose of this project is to create a webpage to a cliente about her a
 
 <hr>
 
+## Set up `docker-compose.ym` file
+
+- `DATABASE_PASSWORD=yourPassword` <= services: web
+- `POSTGRES_PASSWORD=yourPassword` <= services: db
+
+<hr>
+
 ## Running the application
 
 To run the app you'll need [Docker](https://www.docker.com/products/docker-desktop/). After that, follow the steps below in your `terminal`:

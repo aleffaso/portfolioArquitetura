@@ -7,4 +7,9 @@ routes.get("/", (req, res) => {
     res.render("index");
 });
 
+//Login
+routes.get("/login", (req, res) => {
+    res.render("login");
+});
+
 module.exports = routes;

@@ -1,0 +1,39 @@
+<%- include("../../partials/head.ejs") %>
+<!-- Navigation-->
+<%- include("../../partials/navbar.ejs") %>
+    <div id="curriculo">
+        <div class="container mt-5">
+            <div class="row justify-content-center">
+                <p class="text-black mb-4 text-uppercase fs-5 text-center mt-5">Cadastrar Currículo</p>
+                <div class="col-12 mb-5">
+                    <form method="POST" action="/curriculo/new" onsubmit=successCreated(event,this)>
+                        <div class="form-group mb-2">
+                            <input type="email" name="email" class="form-control" placeholder="Email">
+                        </div>
+                        <div class="form-group mb-2">
+                            <input type="password" name="password" class="form-control" placeholder="Senha">
+                        </div>
+                        <div class="form-group mb-2">
+                            <textarea type="password" name="about" class="form-control" placeholder="Sobre mim"></textarea>
+                        </div>
+                        <div class="form-group mb-2">
+                            <textarea type="password" name="ability" class="form-control" placeholder="Habilidades"></textarea>
+                        </div>
+                        <div class="form-group mb-2">
+                            <textarea type="password" name="experience" class="form-control" placeholder="Experiencias"></textarea>
+                        </div>
+                        <div class="form-group mb-2">
+                            <textarea type="password" name="course" class="form-control" placeholder="Cursos"></textarea>
+                        </div>
+                        <div class="text-center mt-3">
+                            <button type="submit" class="btn btn-dark">Cadastrar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- Contact-->
+<%- include("../../sections/04_contact.ejs") %>
+<!-- Footer-->
+<%- include("../../partials/footer.ejs") %>

@@ -14,7 +14,7 @@ services:
       - .env
     environment:
       - DATABASE_USER=root
-      - DATABASE_PASSWORD=root
+      - DATABASE_PASSWORD=Aleff8145
       - DATABASE_TABLE=portfolio
       - DATABASE_HOST=db
       - DATABASE_DIALECT=postgres
@@ -22,7 +22,7 @@ services:
       - DATABASE_TIMEZONE=-03:00
       - JWT_TOKEN=abracadabra
     depends_on:
-      - db
+      - "db"
 
   db:
     image: postgres:13
@@ -34,6 +34,6 @@ services:
     environment:
       - POSTGRES_NAME=portfolio
       - NEW_POSTGRES_NAME=portfolio
-      - POSTGRES_PASSWORD=root
+      - POSTGRES_PASSWORD=Aleff8145
       - POSTGRES_USER=root
       - POSTGRES_DB=portfolio
