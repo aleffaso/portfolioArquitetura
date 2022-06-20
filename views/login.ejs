@@ -7,7 +7,7 @@
             <div class="row justify-content-center">
                 <p class="text-black mb-4 text-uppercase fs-5 text-center mt-5">Fazer login</p>
                 <div class="col-12 mb-5">
-                    <form method="POST" action="/login" onsubmit=successLogged(event,this)>
+                    <form method="POST" action="/login">
                         <div class="form-group mb-2">
                             <input type="email" name="email" class="form-control" placeholder="E-mail">
                         </div>
@@ -26,3 +26,24 @@
 <%- include("sections/04_contact.ejs") %>
 <!-- Footer-->
 <%- include("partials/footer.ejs") %>
+
+<% if(message==false){ %>
+    <script>
+        Swal.fire({
+            icon: 'Erro',
+            title: 'O seguinte erro ocorreu:',
+            text: '<%=error%>',
+            confirmButtonColor: '#009dff',
+            showConfirmButton: true
+        })
+    </script>
+<% }else if(message==true && error==false){ %>
+    <script>
+        Swal.fire({
+            icon: 'Sucess',
+            title: 'Sessão finalizada',
+            confirmButtonColor: '#009dff',
+            showConfirmButton: true
+        })
+    </script>
+<% } %>

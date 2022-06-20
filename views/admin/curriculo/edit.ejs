@@ -6,24 +6,30 @@
             <div class="row justify-content-center">
                 <p class="text-black mb-4 text-uppercase fs-5 text-center mt-5">Atualizar Currículo</p>
                 <div class="col-12 mb-5">
-                    <form method="POST" action="/curriculo/update" onsubmit=successUpdated(event,this)>
+                    <form method="POST" action="/curriculo/update">
                         <div class="form-group mb-2">
-                            <input type="email" name="email" class="form-control" value="<%= curriculo.email %>">
+                            <input type="text" name="name" class="form-control" placeholder="Nome e sobrenome" value="<%= curriculo.name %>" required>
                         </div>
                         <div class="form-group mb-2">
-                            <input type="password" name="password" class="form-control" value="<%= curriculo.password %>">
+                            <textarea id="curriculo-about" type="text" name="about" class="form-control" required><%= curriculo.about %></textarea>
                         </div>
                         <div class="form-group mb-2">
-                            <textarea type="text" name="about" class="form-control" value="<%= curriculo.about %>"></textarea>
+                            <textarea id="curriculo-experience" type="text" name="experience" class="form-control" required><%= curriculo.experience %></textarea>
                         </div>
                         <div class="form-group mb-2">
-                            <textarea type="text" name="ability" class="form-control" value="<%= curriculo.ability %>"></textarea>
+                            <textarea id="curriculo-course" type="text" name="course" class="form-control" required><%= curriculo.course %></textarea>
                         </div>
                         <div class="form-group mb-2">
-                            <textarea type="text" name="experience" class="form-control" value="<%= curriculo.experience %>"></textarea>
+                            <textarea id="curriculo-ability" type="text" name="ability" class="form-control" required><%= curriculo.ability %></textarea>
                         </div>
                         <div class="form-group mb-2">
-                            <textarea type="text" name="course" class="form-control" value="<%= curriculo.course %>"></textarea>
+                            <input type="email" name="email" class="form-control" value="<%= curriculo.email %>" required>
+                        </div>
+                        <div class="form-group mb-2">
+                            <input type="password" name="password" class="form-control" value="<%= curriculo.password %>" required>
+                        </div>
+                        <div class="form-group mb-2">
+                            <input type="password" name="passwordCheck" class="form-control" value="<%= curriculo.password %>" required>
                         </div>
                         <input type="hidden" name="id" value="<%= curriculo.id %>"> 
                         <div class="text-center mt-3">
@@ -38,3 +44,47 @@
 <%- include("../../sections/04_contact.ejs") %>
 <!-- Footer-->
 <%- include("../../partials/footer.ejs") %>
+
+<script>
+    tinymce.init({
+        selector: "#curriculo-about",
+        plugins:
+            'advlist autolink link image lists print preview hr searchreplace wordcount fullscreen insertdatetime media save table paste emoticons'
+    });
+</script>
+
+<script>
+    tinymce.init({
+        selector: "#curriculo-ability",
+        plugins:
+            'advlist autolink link image lists print preview hr searchreplace wordcount fullscreen insertdatetime media save table paste emoticons'
+    });
+</script>
+
+<script>
+    tinymce.init({
+        selector: "#curriculo-experience",
+        plugins:
+            'advlist autolink link image lists print preview hr searchreplace wordcount fullscreen insertdatetime media save table paste emoticons'
+    });
+</script>
+
+<script>
+    tinymce.init({
+        selector: "#curriculo-course",
+        plugins:
+            'advlist autolink link image lists print preview hr searchreplace wordcount fullscreen insertdatetime media save table paste emoticons'
+    });
+</script>
+
+<% if(message==false){ %>
+    <script>
+        Swal.fire({
+            icon: 'Erro',
+            title: 'O seguinte erro ocorreu:',
+            text: '<%=error%>',
+            confirmButtonColor: '#009dff',
+            showConfirmButton: true
+        })
+    </script>
+<% }%>

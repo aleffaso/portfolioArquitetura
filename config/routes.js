@@ -2,14 +2,13 @@ const express = require("express");
 const routes = express.Router();
 const dotenv = require('dotenv');
 
+const Curriculo = require('../db/Curriculo');
+
 //main page
 routes.get("/", (req, res) => {
-    res.render("index");
-});
-
-//Login
-routes.get("/login", (req, res) => {
-    res.render("login");
+    Curriculo.findAll().then(curriculo => {
+        res.render("index", {curriculo:curriculo, token:req.session.token});
+    })
 });
 
 module.exports = routes;

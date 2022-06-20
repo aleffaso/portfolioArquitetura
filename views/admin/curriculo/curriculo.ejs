@@ -5,22 +5,30 @@
         <div class="container px-4 px-lg-5">
             <div class="row gx-4 gx-lg-5 justify-content-center">
                 <div class="row gx-4 gx-lg-5 justify-content-center">
-                    <div class="col-lg-4 mb-5">
-                        <img class="img-fluid-about" src="/assets/img/thayna.png" alt="..." />
-                    </div>
-                    <div class="col-lg-6">
-                        <p class="text-black mb-4 text-uppercase fs-5 text-start">Sobre mim</p>
-                        <p class="text-black" style="text-align: justify;">
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                        </p>
-                        <p class="text-black mb-4 text-uppercase fs-5 text-start">Habilidades</p>
-                        <p class="text-black" style="text-align: justify;">
-                            - Adobe Photoshop<br>
-                            - Adobe Photoshop<br>
-                            - Adobe Photoshop<br>
-                            - Adobe Photoshop<br>
-                        </p>
-                    </div>
+                    <% curriculo.forEach(curriculo => { %>
+                        <% if(curriculo.id == 1){ %>
+                            <div class="col-lg-4 mb-5">
+                                <img class="img-fluid-about" src="/assets/img/thayna.png" /><br>
+                                <a class="btn btn-success mt-2" href="/curriculo/edit/<%=curriculo.id%>">Editar</a>
+                            </div>
+                            <div class="col-lg-6">
+                                <p class="text-black mb-4 text-uppercase fs-5 text-center"><%= curriculo.name %></p>
+
+                                <p class="text-black text-uppercase fs-5 text-start">Sobre mim</p>
+                                <p class="text-black"><%- curriculo.about %></p>
+
+                                <p class="text-black mb-4 text-uppercase fs-5 text-start">Experiência</p>
+                                <p class="text-black" style="text-align: justify;"><%- curriculo.experience %></p>
+
+                                <p class="text-black mb-4 text-uppercase fs-5 text-start">Cursos</p>
+                                <p class="text-black" style="text-align: justify;"><%- curriculo.course %></p>
+
+                                <p class="text-black mb-4 text-uppercase fs-5 text-start">Habilidades</p>
+                                <p class="text-black" style="text-align: justify;"><%- curriculo.ability %></p>
+                                
+                            </div>
+                        <% } %>
+                    <% }) %>
                 </div>
             </div>
         </div>
@@ -29,3 +37,27 @@
 <%- include("../../sections/04_contact.ejs") %>
 <!-- Footer-->
 <%- include("../../partials/footer.ejs") %>
+
+
+<% if(message==true){ %>
+    <script>
+        Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: '<%=title%>',
+            confirmButtonColor: '#009dff',
+            showConfirmButton: true,
+            timer: 1500
+        })
+    </script>
+<% }else if(message==false){ %>
+    <script>
+        Swal.fire({
+            icon: 'Erro',
+            title: 'O seguinte erro ocorreu:',
+            text: '<%=error%>',
+            confirmButtonColor: '#009dff',
+            showConfirmButton: true
+        })
+    </script>
+<% } %>

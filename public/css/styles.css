@@ -11671,10 +11671,18 @@ body {
   -webkit-background-clip: text;
           background-clip: text;
 }
+.masthead img{
+  position:absolute;
+  width:400px;
+}
 @media (max-width: 512px) {
   .masthead h1, .masthead .h1 {
     font-size: 1.5rem;
     line-height: 2rem;
+  }
+  .masthead img{
+    position:absolute;
+    width:300px;
   }
 }
 @media (min-width: 768px) {
@@ -11710,7 +11718,7 @@ body {
   background-color: #fff;
 }
 .about-section p {
-  margin-bottom: 5rem;
+  margin-bottom: 2rem;
 }
 
 .projects-section {
