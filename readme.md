@@ -26,7 +26,7 @@ The main purpose of this project is to create a webpage to a cliente about her a
 
 <hr>
 
-## Set up `docker-compose.ym` file
+## Set up `docker-compose.yml` file
 
 - `DATABASE_PASSWORD=yourPassword` <= services: web
 - `POSTGRES_PASSWORD=yourPassword` <= services: db
