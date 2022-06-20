@@ -14,6 +14,7 @@ services:
       - .env
     depends_on:
       - db
+    command: bash -c "/usr/wait-for-it.sh --timeout=0 portfolio:3036 && node index.js"
 
   db:
     image: postgres:13

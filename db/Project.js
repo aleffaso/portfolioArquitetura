@@ -11,12 +11,12 @@ const Project = connection.define('projects', {
         type: Sequelize.STRING,
         allowNull: false
     },
-    picture: {
+    cover:{
         type: Sequelize.STRING,
         allowNull: false
     },
-    content: {
-        type: Sequelize.STRING,
+    body: {
+        type: Sequelize.TEXT,
         allowNull: false
     }
 });

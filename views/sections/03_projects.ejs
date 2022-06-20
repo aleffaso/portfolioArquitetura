@@ -3,18 +3,33 @@
         <h2 class="text-black mb-4 text-uppercase text-center mb-4 text-uppercase">Projetos</h2>
         <hr>
 
-        <div class="row gx-0 mb-4 mb-lg-8 align-items-center">
-            <div class="col-xl-8 col-lg-5 vertical-bar ">
-                <img class="img-fluid-project mb-lg-0" src="assets/img/home.jpg" alt="..." />
-            </div>
-            <div class="col-xl-4 col-lg-4">
-                <div class="text-lg-left ms-5 mt-3">
-                    <h4 class="text-uppercase">Shoreline</h4>
-                    <p class="text-black-50 mb-0">Grayscale is open source and MIT licensed. This means you can use it for any project - even commercial projects! Download it, customize it, and publish your website!</p>
+        <% project.forEach(project => { %>
+
+            <div class="row gx-0 mb-4 mb-lg-8 align-items-center">
+                <div class="col-xl-8 col-lg-5 vertical-bar ">
+                    <img class="img-fluid-project mb-lg-0" src="<%= project.cover %>" alt="..." />
+                </div>
+                <div class="col-xl-4 col-lg-4">
+                    <div class="text-lg-left ms-5 mt-3">
+                        <h4 class="text-uppercase"><%= project.title %></h4>
+                        <p class="text-black-50 mb-0"><%- project.body %></p>
+                    </div>
                 </div>
             </div>
-        </div>
-        <hr>
+            <hr>
+        <% }) %>
 
     </div>
 </section>
+
+<% if(message==false){ %>
+    <script>
+        Swal.fire({
+            icon: 'Erro',
+            title: 'O seguinte erro ocorreu:',
+            text: '<%=error%>',
+            confirmButtonColor: '#009dff',
+            showConfirmButton: true
+        })
+    </script>
+<% } %>

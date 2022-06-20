@@ -1,0 +1,50 @@
+<%- include("../../partials/head.ejs") %>
+<!-- Navigation-->
+<%- include("../../partials/navbar.ejs") %>
+    <div id="projects">
+        <div class="container mt-5">
+            <div class="row justify-content-center">
+                <p class="text-black mb-4 text-uppercase fs-5 text-center mt-5">Criar Projeto</p>
+                <div class="col-12 mb-5">
+                    <form method="POST" action="/project/new" novalidate>
+                        <div class="form-group mb-2">
+                            <input type="text" name="title" class="form-control" placeholder="Título" required>
+                        </div>
+                        <div class="form-group mb-2">
+                            <input type="text" name="cover" class="form-control" placeholder="Link da capa" required></input>
+                        </div>
+                        <div class="form-group mb-2">
+                            <textarea id="body-project" type="text" name="body" class="form-control" placeholder="Este projeto ..." style="height: 400px;" required></textarea>
+                        </div>
+                        <div class="text-center mt-3">
+                            <button type="submit" class="btn btn-dark">Enviar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- Contact-->
+<%- include("../../sections/04_contact.ejs") %>
+<!-- Footer-->
+<%- include("../../partials/footer.ejs") %>
+
+<script>
+    tinymce.init({
+        selector: "#body-project",
+        plugins:
+            'advlist autolink link image lists print preview hr searchreplace wordcount fullscreen insertdatetime media save table paste emoticons'
+    });
+</script>
+
+<% if(message==false){ %>
+    <script>
+        Swal.fire({
+            icon: 'Erro',
+            title: 'O seguinte erro ocorreu:',
+            text: '<%=error%>',
+            confirmButtonColor: '#009dff',
+            showConfirmButton: true
+        })
+    </script>
+<% }%>

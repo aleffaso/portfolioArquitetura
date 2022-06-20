@@ -1,0 +1,62 @@
+<%- include("../../partials/head.ejs") %>
+<!-- Navigation-->
+<%- include("../../partials/navbar.ejs") %>
+
+<section class="projects-section bg-light" id="projects">
+    <div class="container px-4 px-lg-5">
+        <h2 class="text-black mb-4 text-uppercase text-center mb-4 text-uppercase">Projetos</h2>
+        <div class="text-center">
+            <a class="btn btn-dark mt-2" href="/project/new">Novo</a>
+        </div>
+        <hr>
+        <% project.forEach(project => { %>
+            <div class="row gx-0 mb-4 mb-lg-8 align-items-center">
+                <div class="col-xl-8 col-lg-5 vertical-bar ">
+                    <img class="img-fluid-project mb-lg-0" src="<%= project.cover %>" alt="..." />
+                </div>
+                <div class="col-xl-4 col-lg-4">
+                    <div class="text-lg-left ms-5 mt-3">
+                        <h4 class="text-uppercase"><%= project.title %></h4>
+                        <div class="text-center mt-2">
+                            <a class="btn btn-dark mt-2" href="/project/edit/<%= project.id %>">Editar</a>
+                            <form method="POST" action="/project/delete" onsubmit=deleteCheck(event,this)>
+                                <input type="hidden" name="id" value="<%= project.id %>">
+                                <button class="btn btn-danger mt-2">Excluir</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <% }) %>
+        <hr>
+
+    </div>
+</section>
+
+<!-- Contact-->
+<%- include("../../sections/04_contact.ejs") %>
+<!-- Footer-->
+<%- include("../../partials/footer.ejs") %>
+
+<% if(message==true){ %>
+    <script>
+        Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: '<%=title%>',
+            confirmButtonColor: '#009dff',
+            showConfirmButton: true,
+            timer: 1500
+        })
+    </script>
+<% }else if(message==false){ %>
+    <script>
+        Swal.fire({
+            icon: 'Erro',
+            title: 'O seguinte erro ocorreu:',
+            text: '<%=error%>',
+            confirmButtonColor: '#009dff',
+            showConfirmButton: true
+        })
+    </script>
+<% } %>

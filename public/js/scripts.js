@@ -52,3 +52,20 @@ window.addEventListener('DOMContentLoaded', event => {
     });
 
 });
+
+//Make sure of deleting something
+function deleteCheck(event, form){
+    event.preventDefault(); 
+    Swal.fire({
+      title: 'Você deseja deletar?',
+      showDenyButton: true,
+      showCancelButton: false,
+      confirmButtonText: 'Deletar',
+      denyButtonText: `Cancelar`,
+      confirmButtonColor: '#009dff',
+    }).then((result) => {
+      if (result.isConfirmed) {
+        form.submit();
+      }
+    })
+  }

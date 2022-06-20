@@ -6,6 +6,7 @@ const session = require('express-session');
 
 const routes = require('./config/routes');
 const curriculosController = require('./controllers/curriculos');
+const projectsController = require('./controllers/projects');
 
 //Set envkeys
 dotenv.config({path: './.env'})
@@ -30,6 +31,7 @@ app.use(bodyParser.json());
 //routes
 app.use("/", routes);
 app.use("/", curriculosController);
+app.use("/", projectsController);
 
 //Server
 app.listen(process.env.PORT || 3000, () => {
